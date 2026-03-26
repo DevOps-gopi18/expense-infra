@@ -1,5 +1,5 @@
 resource "aws_instance" "example_server" {
-  ami           = "ami-09c813fb71547fc4f"
+  ami           = "ami-0220d79f3f480ecf5"
   vpc_security_group_ids = [data.aws_ssm_parameter.bastion_sg_id.value]
   instance_type = "t3.micro"
   subnet_id   = local.public_subnet_ids
