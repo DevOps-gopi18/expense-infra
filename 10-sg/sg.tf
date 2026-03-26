@@ -1,6 +1,6 @@
 module "mysql_sg" {
-    source = "../../terraform-aws-securitygroup"
-    #source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
+    #source = "../../terraform-aws-securitygroup"
+    source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "mysql"
@@ -11,8 +11,8 @@ module "mysql_sg" {
 
 #bastion security group
 module "bastion_sg" {
-    source = "../../terraform-aws-securitygroup"
-    #source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
+    #source = "../../terraform-aws-securitygroup"
+    source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "bastion"
@@ -23,8 +23,8 @@ module "bastion_sg" {
 
 #vpn security group, PORTS = 22, 443, 943, 1194 --> VPN ports
 module "vpn_sg" {
-    source = "../../terraform-aws-securitygroup"
-    #source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
+    #source = "../../terraform-aws-securitygroup"
+    source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "vpn"
@@ -34,8 +34,8 @@ module "vpn_sg" {
 }
 
 module "alb_ingress_sg" {
-    source = "../../terraform-aws-securitygroup"
-    #source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
+    #source = "../../terraform-aws-securitygroup"
+    source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "alb-ingress"
@@ -45,8 +45,8 @@ module "alb_ingress_sg" {
 }
 
 module "eks_control_plane_sg" {
-    source = "../../terraform-aws-securitygroup"
-    #source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
+    #source = "../../terraform-aws-securitygroup"
+    source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "eks-control-plane"
@@ -56,8 +56,8 @@ module "eks_control_plane_sg" {
 }
 
 module "eks_node_sg" {
-    source = "../../terraform-aws-securitygroup"
-    #source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
+    #source = "../../terraform-aws-securitygroup"
+    source = "git::https://github.com/DevOps-gopi18/terraform-aws-securitygroup.git?ref=main"
     project_name = var.project_name
     environment = var.environment
     sg_name = "eks-node"
