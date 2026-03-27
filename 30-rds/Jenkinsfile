@@ -14,17 +14,6 @@ pipeline {
         choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Pick something')
     }
     stages {
-        stage('Install Terraform') {
-            steps {
-                sh """
-                wget https://releases.hashicorp.com/terraform/1.11.1/terraform_1.11.1_linux_amd64.zip
-                unzip -o terraform_1.11.1_linux_amd64.zip
-                sudo mv terraform /usr/local/bin/
-
-                terraform version
-                """
-            }
-        }
         stage('Init') {
             steps {
                 script {
