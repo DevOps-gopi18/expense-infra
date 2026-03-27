@@ -3,19 +3,19 @@ module "alb" {
 
   # expense-dev-app-alb
   internal = false
-  name    = "${var.project_name}-${var.environment}-web-alb"
+  name    = "${var.project_name}-${var.environment}-ingress-alb"
   vpc_id  = data.aws_ssm_parameter.vpc_id.value
   subnets = local.public_subnet_id
   enable_deletion_protection = false
   create_security_group = false
-  security_groups = [local.web_alb_sg_id]
+  security_groups = [local.alb_ingress_sg_id]
 
 
 
   tags = merge(
     var.common_tags,
     {
-        Name = "${var.project_name}-${var.environment}-web-alb"
+        Name = "${var.project_name}-${var.environment}-ingress-alb"
     }
   )
 }
